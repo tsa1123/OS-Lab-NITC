@@ -1,0 +1,35 @@
+decl
+int num;
+str a,z;
+enddecl
+int main(){
+begin
+num=exposcall("Write",-2,"a");
+num=exposcall("Write",-2,"b");
+num=exposcall("Write",-2,"c");
+num=exposcall("Write",-2,"d");
+num=exposcall("Write",-2,"e");
+num=exposcall("Write",-2,"f");
+num=exposcall("Write",-2,"g");
+num=exposcall("Write",-2,"h");
+num=exposcall("Write",-2,"i");
+num=exposcall("Write",-2,"j");
+num=exposcall("Write",-2,"k");
+num=exposcall("Write",-2,"l");
+num=exposcall("Write",-2,"m");
+num=exposcall("Write",-2,"n");
+num=exposcall("Write",-2,"o");
+num=exposcall("Write",-2,"p");
+num=exposcall("Write",-2,"q");
+num=exposcall("Write",-2,"r");
+num=exposcall("Write",-2,"s");
+num=exposcall("Write",-2,"t");
+num=exposcall("Write",-2,"u");
+num=exposcall("Write",-2,"v");
+num=exposcall("Write",-2,"w");
+num=exposcall("Write",-2,"x");
+num=exposcall("Write",-2,"y");
+num=exposcall("Write",-2,"z");
+return 0;
+end
+}

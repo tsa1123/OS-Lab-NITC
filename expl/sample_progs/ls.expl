@@ -1,0 +1,35 @@
+int main(){
+	decl
+		int tmp,fld;
+		str name;
+	enddecl
+	begin
+	fld=exposcall("Open","root");
+	if(fld==-1)then
+		tmp=exposcall("Write",-2,"FNForNOTD/R");
+	else 
+		if(fld==-2)then
+			tmp=exposcall("Write",-2,"OFLimitReached");
+		else
+			if(fld==-3)then
+				tmp=exposcall("Write",-2,"RLimitReached");
+			else
+				tmp=exposcall("Write",-2," ");
+				while(1==1)do
+					tmp=exposcall("Read",fld,name);
+					if(tmp!=0)then
+						break;
+					endif;
+					if(name=="-1")then
+						break;
+					endif;
+					tmp=exposcall("Write",-2,name);
+					tmp=exposcall("Seek",fld,7);
+				endwhile;
+				tmp=exposcall("Close",fld);
+			endif;
+		endif;
+	endif;
+	return 0;
+	end
+}

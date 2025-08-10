@@ -1,0 +1,15 @@
+int main()
+{
+decl
+int num,input;
+enddecl
+begin
+num=exposcall("Fork");
+num=exposcall("Fork");
+num=exposcall("Fork");
+num=exposcall("Fork");
+input=exposcall("Getpid");
+num=exposcall("Write",-2,input);
+return 0;
+end
+}

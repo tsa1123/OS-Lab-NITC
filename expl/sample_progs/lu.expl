@@ -1,0 +1,17 @@
+decl
+int num,i;
+str uname;
+enddecl
+int main(){
+begin
+i=0;
+while(i<16)do
+	num=exposcall("Getuname",i);
+	if(num!=-1)then
+		num=exposcall("Write",-2,num);
+	endif;
+	i=i+1;
+endwhile;
+return 0;
+end
+}

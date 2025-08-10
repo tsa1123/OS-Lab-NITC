@@ -1,0 +1,15 @@
+int main()
+{
+decl
+int num;
+enddecl
+begin
+num=exposcall("Fork");
+if(num==0)then
+	num=exposcall("Exec","odd.xsm");
+else
+	num=exposcall("Exec","bsort.xsm");
+endif;
+return 0;
+end
+}

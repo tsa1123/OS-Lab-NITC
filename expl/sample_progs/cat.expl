@@ -1,0 +1,37 @@
+decl
+int num,fld;
+str name,wd;
+enddecl
+int main(){
+begin
+num=exposcall("Write",-2,"FileName:");
+num=exposcall("Read",-1,name);
+fld=exposcall("Open",name);
+if(fld==-1)then
+	num=exposcall("Write",-2,"FNForNOTD/R");
+else 
+	if(fld==-2)then
+		num=exposcall("Write",-2,"OFLimitReached");
+	else
+		if(fld==-3)then
+			num=exposcall("Write",-2,"RLimitReached");
+		else
+			num=exposcall("Write",-2," ");
+			while(1==1)do
+				num=exposcall("Read",fld,wd);
+				if(num!=0)then
+					if(num==-2)then
+						num=exposcall("Write",-2,"--EOF--");
+					endif;
+					break;
+				endif;
+				num=exposcall("Write",-2,wd);
+			endwhile;
+			num=exposcall("Close",fld);
+		endif;
+	endif;
+endif;
+
+return 0;
+end
+}

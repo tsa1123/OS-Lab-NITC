@@ -1,0 +1,19 @@
+decl
+int num,per;
+str name;
+enddecl
+int main(){
+begin
+num=exposcall("Write",-2,"FileName:");
+num=exposcall("Read",-1,name);
+num=exposcall("Write",-2,"Permission:");
+num=exposcall("Read",-1,per);
+num=exposcall("Create",name,per);
+if(num==0)then
+num=exposcall("Write",-2,"Success!");
+else 
+num=exposcall("Write",-2,"Failed :(");
+endif;
+return 0;
+end
+}

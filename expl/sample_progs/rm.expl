@@ -1,0 +1,21 @@
+decl
+int num;
+str name;
+enddecl
+int main(){
+begin
+num=exposcall("Write",-2,"FileName:");
+num=exposcall("Read",-1,name);
+num=exposcall("Delete",name);
+if(num==0)then
+num=exposcall("Write",-2,"Success!");
+else
+if(num==-1)then 
+num=exposcall("Write",-2,"PermDenied");
+else
+num=exposcall("Write",-2,"FileOpen");
+endif;
+endif;
+return 0;
+end
+}

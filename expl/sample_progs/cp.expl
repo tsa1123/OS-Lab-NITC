@@ -1,0 +1,36 @@
+decl
+int num,fld1,fld2;
+str name,wd;
+enddecl
+int main(){
+begin
+num=exposcall("Write",-2,"Source:");
+num=exposcall("Read",-1,name);
+fld1=exposcall("Open",name);
+num=exposcall("Write",-2,"Destination:");
+num=exposcall("Read",-1,name);
+fld2=exposcall("Open",name);
+if(fld1>=0)then
+	if(fld2>=0)then
+		num=exposcall("Write",-2," ");
+		while(1==1)do
+			num=exposcall("Read",fld1,wd);
+			if(num!=0)then
+				if(num==-2)then
+					num=exposcall("Write",-2,"Success");
+				endif;
+				break;
+			endif;
+			num=exposcall("Write",fld2,wd);
+		endwhile;
+		num=exposcall("Close",fld1);
+		num=exposcall("Close",fld2);
+		else
+			num=exposcall("Write",-2,"InvDES/ErrOpDES");
+	endif;
+	else
+		num=exposcall("Write",-2,"InvSRC/ErrOpSRC");
+endif;
+return 0;
+end
+}

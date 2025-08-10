@@ -1,0 +1,57 @@
+type
+list{
+int key;
+list next;
+}
+endtype
+
+int main(){
+decl
+	int x,temp;
+	list head,p,q;
+enddecl
+begin
+	temp=initialize();
+	head=null;
+	temp=exposcall("Write",-2,"Elements:");
+	x=0;
+	while(x<100)do
+		x=x+1;
+		q=alloc();
+		q.next=null;
+		q.key=x;
+		if(head==null)then
+			head=q;
+			p=head;
+		else
+			p.next=q;
+			p=q;
+		endif;
+	endwhile;
+	temp=exposcall("Fork");
+    	if(temp == 0) then
+    		p=head;
+		while(p != null)do
+		    x=p.key;
+		    temp = exposcall("Write",-2,x);
+		    p=p.next;
+		    if(p==null)then
+		        break;
+		    endif;
+		    p=p.next;
+		endwhile;
+    	else
+        	q = head.next;
+        	while(q != null)  do
+        	    x = q.key;
+        	    temp = exposcall("Write",-2,x);
+        	    q = q.next;
+        	    if(q == null) then
+        	        break;
+        	    endif;
+        	    q = q.next;
+        	endwhile;
+    	endif;
+	return 0;
+end
+}
